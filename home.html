@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WartegKu</title>
+
+    <!-- BS 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BS 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- BS 5 SweetAllert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Fontawesome -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/328b2b4f87.js" crossorigin="anonymous"></script>
+
+    <!-- Asset -->
+    <link rel="stylesheet" href="./asset/style.css"/>
+    <script src="./asset/script.js"></script>
+
+    <style>
+        img {
+            border-radius: var(--roundedMD);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" style="font-size: calc(var(--textXLG)*1.5);" href="home.html">WartegKu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="todos.html">Todos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Welcoming -->
+        <div class="mini-content">
+            <div class="row">
+                <div class="col text-center pt-4">
+                    <h1 class="mt-4 mb-0 text-primary">Welcome to WartegKu</h1>
+                    <h5 class="text-secondary">Get healthy, home-style, and cheap food in your office</h5>
+
+                    <br><hr><br>
+                    <h5 class="mb-0">Open Hour</h5>
+                    <h1 class="fw-bold">09:00 - 18:00</h1>
+                    <br><hr>
+
+                    <h5><span class="text-secondary">we're at</span> Telkom Landmark Tower <span class="text-primary" style="font-size:calc(var(--textXJumbo)*1.5)">Basement 2</span></h5>
+
+                    <p class="mt-4">You got a bussy schedule? or maybe still a boring meeting?<button class="btn btn-success rounded-pill mt-2 py-2 px-4 mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        ><h5><i class="fa-solid fa-cart-shopping"></i> Order Now</h5></button></p>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><h2>ORDER NOW!</h2></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-bordered text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Category</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Nasi Putih</td>
+                                                    <td>RICE</td>
+                                                    <td class="fw-bold">Rp. 2K</td>
+                                                    <td><span class="btn-tag">Ready</span></td>
+                                                    <td><button class="btn btn-success rounded-pill my-1"><i class="fa-solid fa-plus"></i> Add to Cart</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nasi Uduk</td>
+                                                    <td>RICE</td>
+                                                    <td class="fw-bold">Rp. 3K</td>
+                                                    <td><span class="btn-tag bg-warning">Run Out</span></td>
+                                                    <td><button class="btn btn-success rounded-pill my-1"><i class="fa-solid fa-plus"></i> Add to Cart</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sayur Pare</td>
+                                                    <td>SAYURAN</td>
+                                                    <td class="fw-bold">Rp. 4K</td>
+                                                    <td><span class="btn-tag">Ready</span></td>
+                                                    <td><button class="btn btn-success rounded-pill my-1"><i class="fa-solid fa-plus"></i> Add to Cart</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tumis Kangkung</td>
+                                                    <td>RICE</td>
+                                                    <td class="fw-bold">Rp. 4K</td>
+                                                    <td><span class="btn-tag">Ready</span></td>
+                                                    <td><button class="btn btn-success rounded-pill my-1"><i class="fa-solid fa-plus"></i> Add to Cart</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ayam Opor</td>
+                                                    <td>MEAT</td>
+                                                    <td class="fw-bold">Rp. 5K</td>
+                                                    <td><span class="btn-tag bg-danger">EMPTY</span></td>
+                                                    <td><button class="btn btn-success rounded-pill my-1"><i class="fa-solid fa-plus"></i> Add to Cart</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rendang</td>
+                                                    <td>MEAT</td>
+                                                    <td class="fw-bold">Rp. 7K</td>
+                                                    <td><span class="btn-tag">Ready</span></td>
+                                                    <td><button class="btn btn-success rounded-pill my-1"><i class="fa-solid fa-plus"></i> Add to Cart</button></td>
+                                                </tr>
+                                            </tbody>
+                                            </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary rounded-pill">Process to Payment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col">
+                    <img src="./asset/main.png" class="img img-fluid d-block mx-auto">
+                </div>
+            </div>
+        </div>
+
+        <br><hr><br>
+
+        <!-- Our best seller -->
+        <h1 class="text-center mt-4">OUR BEST DEALS</h1>
+        <div id="carouselExampleControls" class="carousel slide py-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/salad.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Sayur Pare</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">SAYURAN</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/meat.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Rendang</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">Meat</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/meat.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Rendang</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">Meat</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/salad.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Sayur Pare</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">SAYURAN</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/meat.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Rendang</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">Meat</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/meat.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Rendang</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">Meat</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/salad.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Sayur Pare</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">SAYURAN</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/meat.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Rendang</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">Meat</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card menu-box">
+                                <img src="./asset/meat.jpg" class="img img-fluid">
+                                <h2 class="mb-1">Ayam Bakar</h2>
+                                <div class="d-flex justify-content-start">
+                                    <a class="btn-tag">Meat</a>
+                                </div>
+                                <br>
+                                <h4>Rp. <span>6K</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <br><hr><br>
+
+        <!-- Chef -->
+        <h1 class="text-center mt-4">BEHIND OUR KITCHEN</h1>
+        <div class="row">
+            <div class="col-lg-4 mx-auto p-3">
+                <div class="text-center">
+                    <img src="./asset/man1.jpg" class="img img-fluid shadow rounded-circle mb-3">
+                    <h2 class="mb-0">Aaron</h2>
+                    <p class="text-secondary fw-bold">MON | TUE | WED</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mx-auto p-3">
+                <div class="text-center">
+                    <img src="./asset/man2.jpg" class="img img-fluid shadow rounded-circle mb-3">
+                    <h2 class="mb-0">Timothy</h2>
+                    <p class="text-secondary fw-bold">THU | FRI | SAT</p>
+                </div>
+            </div>
+        </div>
+
+        <br><hr><br>
+
+        <!-- Moto -->
+        <h1 class="text-center mt-4">MOTTO</h1>
+        <p class="text-secondary fst-italic my-3 text-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"</p>
+        <p class="fw-bold fst-italic my-3 text-center">Jhon Doe</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top px-4">
+        <p class="col-md-4 mb-0 text-muted">© 2024 WartegKu, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Find Us</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* Style Guide */
+:root {   
+    /* Typography */
+    --textXJumbo : 24px;
+    --textJumbo : 20px;
+    --textXLG : 18px;
+    --textLG : 16px;
+    --textXMD : 14px;
+    --textMD : 13px;
+    --textSM : 12px;
+    --textXSM : 11px;
+
+    /* Rounded */
+    --roundedCircle : 100%;
+    --roundedJumbo : 30px;
+    --roundedXLG : 24px;
+    --roundedLG : 18px;
+    --roundedMD : 14px;
+    --roundedSM : 12px;
+    --roundedMini : 6px;
+
+    /* Spacing */
+    --spaceJumbo : 35px;
+    --spaceXLG : 24px;
+    --spaceLG : 20px;
+    --spaceXMD : 16px;
+    --spaceMD : 12px;
+    --spaceSM : 10px;
+    --spaceXSM : 8px;
+    --spaceXXSM : 6px;
+    --spaceMini : 4px;
+
+    /* Color Pallete */
+    --successBG : #00C363;
+    --dangerBG : #DD0022;
+    --warningBG : #FFC352;
+    --infoBG : #009FF9;
+
+    --primaryColor : #3b82f6;
+    --darkColor : #121725;
+    --whiteColor : #FFFFFF;
+    --greyColor : #838181;
+    --shadowColor : #E0E0E0;
+}
+
+/* All Pages */
+.content {
+    min-height: 90vh;
+    width: 1080px;
+    display: block;
+    margin-inline: auto;
+    padding: var(--spaceJumbo) var(--spaceMD);
+}
+.mini-content {
+    padding: calc(var(--spaceJumbo)*2) 0;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    -webkit-transition: all 0.4s !important;
+    -o-transition: all 0.4s !important;
+    transition: all 0.4s !important;
+    cursor: pointer;
+    border-radius: var(--roundedJumbo) !important;
+    border: none;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.05);
+}
+
+.carousel-item {
+    padding: var(--spaceLG);
+}
+table td {
+    vertical-align: middle;
+}
+.modal-content {
+    border-radius: var(--roundedJumbo);
+}
+
+/* Home */
+.menu-box {
+    height: 420px;
+    padding: var(--spaceLG);
+}
+.btn-tag {
+    background: var(--successBG);
+    border-radius: var(--roundedJumbo);
+    padding: var(--spaceSM) var(--spaceXMD);
+    font-size: var(--textXMD);
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+.menu-box img {
+    height: 240px;
+}
+
+/* Porfolio */
+.btn-socmed {
+    border: 2px solid var(--greyColor);
+    padding: var(--spaceMD) calc(var(--spaceLG)*0.85);
+    border-radius: 100%;
+    background: transparent;
+    -webkit-transition: all 0.4s !important;
+    -o-transition: all 0.4s !important;
+    transition: all 0.4s !important;
+    margin-right: var(--spaceSM);
+}
+.btn-socmed:hover {
+    background: black;
+    color: var(--whiteColor);
+    border: 2px solid black;
+}

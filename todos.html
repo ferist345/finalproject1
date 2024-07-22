@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WartegKu | Todos</title>
+
+    <!-- BS 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BS 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Jquery -->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+     <!-- Fontawesome -->
+     <link rel="preconnect" href="https://fonts.bunny.net">
+     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+     <script src="https://kit.fontawesome.com/328b2b4f87.js" crossorigin="anonymous"></script>
+
+    <!-- Asset -->
+    <link rel="stylesheet" href="./asset/style.css"/>
+    <script src="./asset/script.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" style="font-size: calc(var(--textXLG)*1.5);" href="home.html">WartegKu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="todos.html">Todos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Feedback -->
+        <div class="mini-content">
+            <h1 class="text-center mt-4 mb-3">GIVE US FEEDBACK</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="text-start">
+                        <form id="feedback-form" style="width: 720px;">
+                            <label for="customRange2" class="form-label">Feedback</label>
+                            <input class="form-control" name="feedback_body" id="feedback_body">
+                            <label for="customRange2" class="form-label">Rate</label>
+                            <input type="range" class="form-range" min="0" max="5" name="feedback_rate" id="feedback_rate">
+                            <a class="btn btn-success rounded-pill" onclick="send_feedback()">Send Feedback</a>
+                        </form>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Latest Feedback</h5><hr>
+                    <div id="feedback_holder" class="d-block"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top px-4">
+        <p class="col-md-4 mb-0 text-muted">© 2024 WartegKu, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Find Us</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        let list_feedback = [
+            {
+                feedback_body:"Whoa!",
+                feedback_rate:4
+            },
+            {
+                feedback_body:"That taste so good",
+                feedback_rate:5
+            },
+            {
+                feedback_body:"I Think this will be my daily lunch",
+                feedback_rate:5
+            }
+        ]
+
+        if(localStorage.getItem('list_feedback') == null){
+            localStorage.setItem('list_feedback', JSON.stringify(list_feedback))
+        }
+
+        const send_feedback = () => {
+            const feedback_body_el = $('#feedback_body')
+            const feedback_rate_el = $('#feedback_rate')
+            let data = JSON.parse(localStorage.getItem('list_feedback'))
+
+            data.push({
+                feedback_body:feedback_body_el.val().trim(),
+                feedback_rate:feedback_rate_el.val().trim()
+            })
+
+            if(feedback_body_el.val() != null && feedback_body_el.val().length > 0){
+                localStorage.setItem('list_feedback', JSON.stringify(data))
+                Swal.fire({
+                    title: "Success!",
+                    text: "Thank you for your feedback",
+                    icon: "success"
+                }).then(() => {
+                    location.reload();
+                });
+            } else {
+                Swal.fire({
+                    title: "Failed!",
+                    text: "Feedback cant be empty",
+                    icon: "error"
+                });
+            }
+        }
+
+        const get_feedback = () => {
+            const data = JSON.parse(localStorage.getItem('list_feedback'))
+            
+            data.forEach(dt => {
+                $('#feedback_holder').prepend(`
+                    <div class="shadow container p-3 m-2 mb-3" style="border-radius:var(--roundedLG);">
+                        <b><i class="fa-solid fa-star"></i> ${dt.feedback_rate}</b> | ${dt.feedback_body}
+                    </div>
+                `)
+            });
+        }
+
+        get_feedback()
+    </script>
+</body>
+</html>

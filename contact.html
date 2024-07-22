@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WartegKu | Contact</title>
+
+    <!-- BS 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BS 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- BS 5 SweetAllert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Fontawesome -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/328b2b4f87.js" crossorigin="anonymous"></script>
+
+    <!-- Asset -->
+    <link rel="stylesheet" href="./asset/style.css"/>
+    <script src="./asset/script.js"></script>
+
+    <style>
+        #map-board {
+            height: 500px;
+            border-radius:var(--roundedLG);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" style="font-size: calc(var(--textXLG)*1.5);" href="home.html">WartegKu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="todos.html">Todos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Welcoming -->
+        <div class="mini-content">
+            <h1 class="text-center mt-4 mb-3">CONTACT US</h1>
+            <div class="text-center">
+                <h4 class="mb-0">Phone</h4>
+                <p>+62 123456789</p>
+
+                <h4 class="mb-0">Email</h4>
+                <p>jhondoe@gmail.com</p>
+
+                <h4 class="mb-0">Website</h4>
+                <p>wartegku.com</p>
+            </div>
+        </div>
+
+        <hr><br>
+
+        <!-- location -->
+        <h1 class="text-center mt-4">OUR LOCATION</h1>
+        <div id="map-board"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top px-4">
+        <p class="col-md-4 mb-0 text-muted">© 2024 WartegKu, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Find Us</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXu2ivsJ8Hj6Qg1punir1LR2kY9Q_MSq8&callback=initMap&v=weekly" defer></script>
+</body>
+<script type="text/javascript">
+    let map;
+
+    function initMap() {
+        var markers = [];
+
+        map = new google.maps.Map(document.getElementById("map-board"), {
+            center: { lat: -6.226838579766097, lng: 106.82157923228753},
+            zoom: 12,
+        });
+
+        addMarker(markers[0])
+
+        function addMarker(props){
+            var marker = new google.maps.Marker({
+                position: props.coords,
+                map: map,
+                icon: props.icon
+            });
+
+            if(props.iconImage){
+                marker.setIcon(props.iconImage);
+            }
+            if(props.content){
+                var infoWindow = new google.maps.InfoWindow({
+                content:props.content
+            });
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+            });
+            }
+        }
+    }
+
+    window.initMap = initMap;
+</script>
+</html>

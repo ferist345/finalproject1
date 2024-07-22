@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WartegKu | Blog</title>
+
+    <!-- BS 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- BS 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- SweetAllert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+     <!-- Jquery -->
+     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- Asset -->
+    <link rel="stylesheet" href="./asset/style.css"/>
+    <script src="./asset/script.js"></script>
+
+    <!-- Fontawesome -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/328b2b4f87.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" style="font-size: calc(var(--textXLG)*1.5);" href="home.html">WartegKu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="todos.html">Todos</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <div class="content">
+
+        <!-- News -->
+        <div class="mini-content">
+            <div class="d-flex justify-content-between">
+                <div></div>
+                <div>            
+                    <h1 class="text-center">NEWS</h1>
+                </div>
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Add News
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add News</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-floating mb-2">
+                                    <input class="form-control" placeholder="Title" id="news_title">
+                                    <label for="floatingTextarea2">Title</label>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="news_body" style="height: 100px"></textarea>
+                                    <label for="floatingTextarea2">Content</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" onclick="add_news()">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <input class="form-control mb-3" id="search-box" placeholder="Search by title...">
+            <div id="active_search" class="text-secondary"></div>
+            <div id="news_holder"></div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top px-4">
+        <p class="col-md-4 mb-0 text-muted">© 2024 WartegKu, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Find Us</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        let list_news = [
+            {
+                news_body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium nibh ipsum. Mauris ultrices eros in cursus turpis massa. Adipiscing elit ut aliquam purus sit amet. Velit laoreet id donec ultrices tincidunt arcu non sodales neque. Cursus mattis molestie a iaculis. Nunc consequat interdum varius sit amet mattis vulputate enim. Purus faucibus ornare suspendisse sed. Purus sit amet luctus venenatis lectus magna. Massa enim nec dui nunc mattis enim ut. Molestie ac feugiat sed lectus vestibulum. Volutpat diam ut venenatis tellus in metus. Consequat ac felis donec et odio pellentesque diam volutpat. Fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque. Nibh venenatis cras sed felis eget velit. Sagittis eu volutpat odio facilisis mauris sit. Felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Arcu ac tortor dignissim convallis aenean. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat. Fusce id velit ut tortor pretium viverra. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Orci ac auctor augue mauris augue neque gravida. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Tortor id aliquet lectus proin nibh. Tempor nec feugiat nisl pretium. Gravida neque convallis a cras semper auctor neque vitae. Adipiscing vitae proin sagittis nisl. Imperdiet sed euismod nisi porta lorem. Vel orci porta non pulvinar neque laoreet. Id ornare arcu odio ut sem nulla pharetra diam. Non curabitur gravida arcu ac tortor.",
+                news_date:"2024-03-16 10:20:22",
+                news_title:"Lorem ipsum dolor sit amet"
+            },
+            {
+                news_body:"Cursus mattis molestie a iaculis. Nunc consequat interdum varius sit amet mattis vulputate enim. Purus faucibus ornare suspendisse sed. Purus sit amet luctus venenatis lectus magna. Massa enim nec dui nunc mattis enim ut. Molestie ac feugiat sed lectus vestibulum. Volutpat diam ut venenatis tellus in metus. Consequat ac felis donec et odio pellentesque diam volutpat. Fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque.",
+                news_date:"2024-03-16 11:47:22",
+                news_title:"Nunc consequat interdum varius"
+            },
+            {
+                news_body:null,
+                news_date:"2024-03-11 08:21:40",
+                news_title:"Consequat ac felis donec et odio pellentesque"
+            },
+        ]
+
+        if(localStorage.getItem('list_news') == null){
+            localStorage.setItem('list_news', JSON.stringify(list_news))
+        }
+
+        const get_news = () => {
+            let data = JSON.parse(localStorage.getItem('list_news')) || []
+            let search = localStorage.getItem('search_news')
+
+            if (search) {
+                data = data.filter(news => news.news_title === search)
+            }
+
+            if (data.length > 0) {
+                let date_before = ""
+
+                data.forEach((dt, idx) => {
+                    if (date_before == "" || date_before != dt.news_date.substring(0, 10)) {
+                        date_before = dt.news_date.substring(0, 10)
+                        $('#news_holder').append(`
+                            <div class="my-2 bg-success text-white d-inline-block px-3 py-1 rounded" style="font-size:var(--textMD);">
+                                ${date_before == getCurrentDate().substring(0, 10) ? 'Today' : date_before}
+                            </div>
+                        `)
+                    }
+
+                    $('#news_holder').append(`
+                        <div class="shadow container p-3 m-2 mb-3" style="border-radius:var(--roundedLG);">
+                            <div class="d-flex justify-content-between">
+                                <h2>${dt.news_title}</h2>
+                                <a class="btn btn-danger px-3 pt-2" onclick="delete_news('${idx}')"><i class="fa-solid fa-trash"></i></a>
+                            </div>
+                            <hr>
+                            <p class="mb-2">${dt.news_body ?? `<span class="fst-italic"> - No Description Provided - </span>`}</p>
+                            <p class="fst-italic mb-0 fw-bold text-secondary">Posted on ${dt.news_date}</p>
+                        </div>
+                    `)
+                })
+            } else {
+                $('#news_holder').empty().append(`
+                    <p class="text-center fst-italic text-secondary">- No Data Found -</p>
+                `)
+            }
+            
+        }
+
+        const delete_news = (idx) => {
+            let data = JSON.parse(localStorage.getItem('list_news'))
+            data.splice(idx, 1)
+
+            localStorage.setItem('list_news',JSON.stringify(data))
+
+            Swal.fire({
+                title: "Success!",
+                text: "News deleted",
+                icon: "success"
+            }).then(() => {
+                location.reload();
+            });
+        }
+
+        const add_news = () => {
+            if($('#news_title').val() != null && $('#news_title').val().trim() != ""){
+                let data = JSON.parse(localStorage.getItem('list_news'))
+                data.push({
+                    news_body: $('#news_body').val().trim(),
+                    news_date: getCurrentDate(),
+                    news_title: $('#news_title').val().trim()
+                })
+
+                localStorage.setItem('list_news',JSON.stringify(data))
+
+                Swal.fire({
+                    title: "Success!",
+                    text: "News created",
+                    icon: "success"
+                }).then(() => {
+                    location.reload();
+                });
+            } else {
+                Swal.fire({
+                    title: "Failed!",
+                    text: "Title cant be empty",
+                    icon: "error"
+                });
+            }
+        }
+
+        $('#search-box').on('blur', function() {
+            if($(this).val().trim() != ""){
+                localStorage.setItem('search_news',$(this).val().trim())
+                Swal.fire({
+                    title: "Success!",
+                    text: "News filtered",
+                    icon: "success"
+                }).then(() => {
+                    location.reload()
+                });
+                get_news()
+            }
+            
+        });
+
+        // Fetch
+        if(localStorage.getItem('search_news') != null){
+            $('#active_search').empty().html(`<a class="btn btn-danger py-1 px-2" id="delete-search"><i class="fa-solid fa-trash"></i></a> Search by '${localStorage.getItem('search_news')}'`)
+        }
+        $('#delete-search').on('click', function() {
+            localStorage.removeItem('search_news')
+            Swal.fire({
+                title: "Success!",
+                text: "News filtered",
+                icon: "success"
+            }).then(() => {
+                location.reload()
+            });
+            get_news()
+        });
+
+        get_news()
+    </script>
+</body>
+</html>
